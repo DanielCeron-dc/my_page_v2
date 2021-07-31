@@ -40,7 +40,7 @@ const Orbit: React.FC<OrbitControlsProps> = (props) => {
         attach="orbitControls"
         args={[camera, gl.domElement]}
         enabled={props.isOrbitControlsEnabled}
-        enableZoom={true}
+        enableZoom={props.enableZoom}
         autoRotate={true}
         enablePan={false}
         zoomSpeed={props.zoomSpeed}

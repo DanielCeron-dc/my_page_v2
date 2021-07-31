@@ -33,25 +33,7 @@ const Fire: React.FC = () => {
             <div className={classes.particle} />
             <div className={classes.particle} />
             <div className={classes.particle} />
-            <div className={classes.particle} />
-            <div className={classes.particle} />
-            <div className={classes.particle} />
-            <div className={classes.particle} />
-            <div className={classes.particle} />
-            <div className={classes.particle} />
-            <div className={classes.particle} />
-            <div className={classes.particle} />
-            <div className={classes.particle} />
-            <div className={classes.particle} />
-            <div className={classes.particle} />
-            <div className={classes.particle} />
-            <div className={classes.particle} />
-            <div className={classes.particle} />
-            <div className={classes.particle} />
-            <div className={classes.particle} />
-            <div className={classes.particle} />
-            <div className={classes.particle} />
-            <div className={classes.particle} />
+
 
         </div>
     </div>

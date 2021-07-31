@@ -3,15 +3,16 @@
     filter: blur(0.02em);
     -webkit-filter: blur(0.02em);
     position: fixed;
-    display: block;
-    z-index: 999;
-    width: 200px;
-    height: 12em;
+    bottom: -10px;
+    right: -10px;
+    z-index: 1;
+    width: 150px;
+  
   }
   
   .particle {
     animation: rise 1s ease-in infinite;
-    background-image: radial-gradient(#23a128 20%, rgba(255, 80, 0, 0) 70%);
+    background-image: radial-gradient(mediumseagreen 20%, rgba(255, 80, 0, 0) 70%);
     border-radius: 50%;
     mix-blend-mode: screen;
     opacity: 0;
@@ -231,6 +232,6 @@
     }
     to {
       opacity: 0;
-      transform: translateY(-10em) scale(0);
+      transform: translateY(-7em) scale(0);
     }
   }

@@ -7,6 +7,7 @@ import { Group, Object3D } from 'three';
 
 import { usePhysicsBoxesStore } from "../../Store/PhysicsBoxes.store";
 
+
 extend({ DragControls });
 
 declare global {
@@ -17,6 +18,8 @@ declare global {
     }
 }
 let dragLocal = -1;
+let clientx = 0;
+let clienty = 0;
 
 const Dragable: React.FC<{ id?: number }> = (props) => {
 
@@ -30,6 +33,7 @@ const Dragable: React.FC<{ id?: number }> = (props) => {
     const { setDragging, setPosition, dragging } = usePhysicsBoxesStore();
 
 
+
     useEffect(() => {
         setChildren(groupRef.current?.children ?? []);
     }, []);
@@ -37,13 +41,11 @@ const Dragable: React.FC<{ id?: number }> = (props) => {
     useEffect(() => {
         const currentControls = controlRef.current;
         if (!currentControls) return;
+
         currentControls.addEventListener("dragstart", () => {
             if (dragging === -1) {
-
                 props.id !== undefined && setDragging(props.id, true);
                 dragLocal = props.id ? props.id : -1;
-            } else {
-
             }
         });
         currentControls.addEventListener("dragend", () => {

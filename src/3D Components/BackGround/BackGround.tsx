@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { Canvas, extend } from "@react-three/fiber";
 import Orbit from '../Controls/Orbit';
+import Spinner from '../../Components/Spinner/Spinner';
 
 
 extend(Canvas);
@@ -29,7 +30,7 @@ export type BackGroundProps = {
 **/
 const BackGround: React.FC<BackGroundProps> = (props) => {
     return <div style={{ height: props.height ?? '100vh', width: props.width ?? '100vw', display: props.display }}>
-        <Suspense fallback={null}>
+        <Suspense fallback={Spinner}>
             <Canvas
                 style={{ background: props.backGroundColor ?? 'rgba(0,0,0,0)' }}
                 shadows

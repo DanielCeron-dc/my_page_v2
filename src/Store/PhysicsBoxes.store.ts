@@ -1,4 +1,5 @@
 import create from "zustand";
+import {projects} from "../tools/informationProjects";
 
 interface IState {
     boxesNumber: number;
@@ -8,7 +9,7 @@ interface IState {
     setDragging: (id: number, dragging: boolean) => void;
 }
 
-const boxes: number = 10;
+const boxes: number = projects.length;
 
 export const usePhysicsBoxesStore = create<IState>((set) => ({
     boxesNumber: boxes,

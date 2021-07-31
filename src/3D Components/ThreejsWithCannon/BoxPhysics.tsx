@@ -5,22 +5,29 @@ import * as THREE from "three";
 import { Vector3 } from "three";
 
 import { getRandomInt } from "../../tools/mathTools";
-import { useLoader } from "@react-three/fiber";
+import { useFrame, useLoader } from "@react-three/fiber";
+import { useModalState } from "../../Store/Modal.store";
+
+import { projects } from "../../tools/informationProjects";
+
+
 
 interface BoxPhysicsProps {
     id: number;
 }
 
+let timeOutFunction: NodeJS.Timeout;
+
+
 const BoxPhysics: React.FC<BoxPhysicsProps> = (props) => {
 
+    const { setShowModal } = useModalState();
 
-
-    const texture = useLoader(THREE.TextureLoader, "./ci.png")
+    const texture = useLoader(THREE.TextureLoader, projects[props.id].img);
     let position: [number, number, number] = [0, 0, 0];
-    let isDragging = false;
     const [ref, api] = useBox(() => ({
         mass: 1,
-        position: [getRandomInt(15), 15 + getRandomInt(15), getRandomInt(15)],
+        position: [getRandomInt(13), 15 + getRandomInt(15), getRandomInt(13)],
         args: [3, 3, 3]
     }));
 
@@ -41,10 +48,11 @@ const BoxPhysics: React.FC<BoxPhysicsProps> = (props) => {
 
     }, []);
 
-
-    return <mesh ref={ref} castShadow receiveShadow  >
+    return <mesh ref={ref} castShadow receiveShadow
+        onClick={() => setShowModal(true, props.id)}
+    >
         <boxBufferGeometry args={[3, 3, 3]} />
-        <meshPhysicalMaterial map={texture} emissive={new THREE.Color("black")} emissiveIntensity={0.1} transmission={0.7} />
+        <meshBasicMaterial map={texture} />
     </mesh>
 }
 
