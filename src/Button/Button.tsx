@@ -2,7 +2,7 @@ import React from 'react';
 import classes from "./Button.module.css";
 
 
-type ButtonProps = {
+interface ButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     onClick: () => void;
 
 };

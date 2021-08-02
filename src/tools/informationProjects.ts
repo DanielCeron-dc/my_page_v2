@@ -3,7 +3,7 @@ import balletApp from "../Assets/ProjectsImages/balletAppP.png"
 import boardP from "../Assets/ProjectsImages/boardP.png"
 import BurgerP from "../Assets/ProjectsImages/BurgerP.png"
 import CatalogoP1 from "../Assets/ProjectsImages/CatalogoP1.png"
-import CatalogoP2 from "../Assets/ProjectsImages/CatalogoP2.png"
+/* import CatalogoP2 from "../Assets/ProjectsImages/CatalogoP2.png" */
 
 
 interface IProjects {
@@ -33,7 +33,7 @@ export const projects: IProjects[] = [
         description: 'un almacen para diferentes botones que he creado',
         img: CatalogoP1
     },
-   
+
 
 ]
 

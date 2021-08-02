@@ -17,9 +17,8 @@ declare global {
         }
     }
 }
-let dragLocal = -1;
-let clientx = 0;
-let clienty = 0;
+
+//let dragoLocal
 
 const Dragable: React.FC<{ id?: number }> = (props) => {
 
@@ -27,12 +26,8 @@ const Dragable: React.FC<{ id?: number }> = (props) => {
     const [children, setChildren] = useState<Object3D[]>([]);
     const groupRef = useRef<Group>();
     const controlRef = useRef<DragControls>();
-    const [enable, setEnable] = useState(true);
-
 
     const { setDragging, setPosition, dragging } = usePhysicsBoxesStore();
-
-
 
     useEffect(() => {
         setChildren(groupRef.current?.children ?? []);
@@ -41,11 +36,9 @@ const Dragable: React.FC<{ id?: number }> = (props) => {
     useEffect(() => {
         const currentControls = controlRef.current;
         if (!currentControls) return;
-
         currentControls.addEventListener("dragstart", () => {
             if (dragging === -1) {
                 props.id !== undefined && setDragging(props.id, true);
-                dragLocal = props.id ? props.id : -1;
             }
         });
         currentControls.addEventListener("dragend", () => {
@@ -55,16 +48,12 @@ const Dragable: React.FC<{ id?: number }> = (props) => {
             if (e.object.position.y < 1) {
                 e.object.position.y = 1;
             }; // prevent y-axis from going under ground
-
             props.id !== undefined && setPosition(props.id, [e.object.position.x, e.object.position.y, e.object.position.z]);
-
         });
-
-
-    }, [children]);
+    }, [children, dragging, props.id, setPosition, setDragging]);
 
     return <group ref={groupRef} >
-        <dragControls ref={controlRef} args={[children, camera, gl.domElement]} enabled={enable} />
+        <dragControls ref={controlRef} args={[children, camera, gl.domElement]} />
         {props.children}
     </group>
 }

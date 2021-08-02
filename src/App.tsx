@@ -19,6 +19,7 @@ function App() {
 
   return (
     <div className="App">
+      <Modal />
       {isMobile ? <>
         <Information setShowProjects={setShowProjects} showProjects={showProjects} />
         {showProjects ? <ProjectsScene /> : <MyKnowledge />}
@@ -26,7 +27,6 @@ function App() {
         :
         <>
           <MiLogo />
-          <Modal />
           <Center>
             <Row>
               {showProjects ? <ProjectsScene /> : <MyKnowledge />}
@@ -35,13 +35,7 @@ function App() {
               <Spacer />
             </Row>
           </Center>
-
         </>}
-
-
-
-
-
     </div>
   );
 }

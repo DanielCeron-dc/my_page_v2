@@ -21,12 +21,10 @@ const Monigote: React.FC<MonigoteProps> = (props) => {
     return <div style={{ zIndex: 1, display: "block", width: isMobile ? "100%" : "30%", height: "auto" }}
         onMouseOver={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
-
     >
         {hover ?
             <>
                 <img src={logo} alt="Perfil foto" height="90" style={{ borderRadius: 50 }} />
-
             </>
             :
             <>
@@ -34,14 +32,14 @@ const Monigote: React.FC<MonigoteProps> = (props) => {
             </>}
 
         <h1 style={{ color: "mediumseagreen" }}>Mi Portafolio</h1>
-        <h2 style={{ color: "white", padding: "20px" }} className="newfont">
+        <h3 style={{ color: "white", padding: "20px" }} className="newfont">
             {!english ?
                 "Bienvenido, soy un programador front end y en este humilde portafolio" +
                 " te quiero mostrar los diferentes trabajos que he hecho y mis conocimientos :D"
                 :
                 "Welcome, i'm a Front end developer, in this humble portfolio I want to show you the different jobs I have done and my knowledge :D"
             }
-        </h2>
+        </h3>
         <div style={{ display: "flex", justifyContent: "space-evenly" }}>
             <Button onClick={() => props.setShowProjects((current) => !current)}>{props.showProjects ? "Habilidades" : "Proyectos"}</Button>
             <Button onClick={() => setEnglish((current) => !current)}>{english ? "Español" : "English"}</Button>

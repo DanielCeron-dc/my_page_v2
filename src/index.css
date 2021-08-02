@@ -7,11 +7,11 @@ body {
 }
 
 .newfont {
-  font-family: 'Palette Mosaic', cursive;
-  font-family: 'Patrick Hand', cursive;
+  font-family: 'Georama', sans-serif;
+  font-family: 'Nunito', sans-serif;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro,  Consolas, 'Patrick Hand',
     monospace;
 }
