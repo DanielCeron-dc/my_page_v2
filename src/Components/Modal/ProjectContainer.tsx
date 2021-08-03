@@ -15,7 +15,6 @@ const ProjectContainer: React.FC<ProjectContainerProps> = () => {
         overflowX: "auto",
         width: "100%",
         alignContent: "center",
-        justifyContent: "center",
     }}>
         {projects.map((p) => <BoxProject project={p} />)}
     </div>

@@ -45,7 +45,9 @@ const ProjectsScene: React.FC = () => {
         >
             <img src={gridIcon} alt="mostrar en grid icon" />
         </Button>
-
+        <h5 style={{ position: "absolute", bottom: 0, right: 0, color: "mediumseagreen" }} className="newfont">
+            Nota* he hecho muchos mas proyectos que estos :D
+        </h5>
     </div>
 
 

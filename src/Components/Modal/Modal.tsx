@@ -66,7 +66,7 @@ const Modal: React.FC = () => {
                         overflowY: "auto",
                         position: "relative",
                         alignContent: "center",
-                        justifyContent: "center",
+
                         display: "inline-grid",
                         width: "100%",
                         height: "100%",
