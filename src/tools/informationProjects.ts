@@ -6,7 +6,7 @@ import CatalogoP1 from "../Assets/ProjectsImages/CatalogoP1.png"
 /* import CatalogoP2 from "../Assets/ProjectsImages/CatalogoP2.png" */
 
 
-interface IProjects {
+export interface IProjects {
     name: string;
     description: string;
     img: string;

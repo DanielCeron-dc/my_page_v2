@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import logo from "../Assets/perfil.gif";
 import staticLogo from "../Assets/Perfil0.png";
-import Button from '../Button/Button';
+import Button from '../Components/Button/Button';
+import CVButton from '../Components/CVButton';
+import GithubButton from '../Components/GithubButton';
+import LanguageButton from '../Components/LanguageButton';
 import useCheckMobileScreen from '../hooks/useCheckMobileScreen';
 
 
@@ -41,8 +44,13 @@ const Monigote: React.FC<MonigoteProps> = (props) => {
             }
         </h3>
         <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-            <Button onClick={() => props.setShowProjects((current) => !current)}>{props.showProjects ? "Habilidades" : "Proyectos"}</Button>
-            <Button onClick={() => setEnglish((current) => !current)}>{english ? "Español" : "English"}</Button>
+            <Button
+                onClick={() => props.setShowProjects((current) => !current)}
+                style={{ color: "black" }}
+            >{props.showProjects ? "Habilidades" : "Proyectos"}</Button>
+            <LanguageButton onClick={() => setEnglish((current) => !current)} />
+            <GithubButton />
+            <CVButton />
         </div>
     </div>
 }

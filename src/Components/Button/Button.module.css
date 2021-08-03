@@ -1,0 +1,15 @@
+.button{
+    border-radius: 15px;
+    background-color: mediumseagreen;
+    color: white;
+    padding: 10px;
+    border: none; 
+    font-family: 'Palette Mosaic', cursive;
+    font-size: 20px;
+}
+
+.button:hover{
+
+    cursor: pointer;
+    background-color: rgb(51, 151, 96);
+}

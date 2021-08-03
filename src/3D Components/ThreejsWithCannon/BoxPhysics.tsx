@@ -44,7 +44,7 @@ const BoxPhysics: React.FC<BoxPhysicsProps> = (props) => {
     }, [api, props.id]);
 
     return <mesh ref={ref} castShadow receiveShadow
-        onClick={() => setShowModal(true, props.id)}
+        onClick={() => setShowModal(0, props.id, false)}
     >
         <boxBufferGeometry args={[3, 3, 3]} />
         <meshBasicMaterial map={texture} />

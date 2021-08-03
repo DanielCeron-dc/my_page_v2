@@ -1,47 +1,68 @@
 import React from 'react';
 import ReactTooltip from "react-tooltip";
-import Logo from "../Assets/img/ci.png";
 
 
+const Tooltip: React.FC = () => {
 
-type TooltipProps = {
-
-};
-
-const Tooltip: React.FC<TooltipProps> = () => {
-
-    return <div>
-        <div data-tip data-for="registerTip"
-
-            style={{
-                width: 150,
-                height: 100,
-                border: "1px solid red",
-                position: "fixed",
-
-                zIndex: 100,
-                visibility: "hidden"
-            }}>
-
-        </div>
-
+    return <>
         <ReactTooltip
-            id="registerTip"
+            id="cv"
             place="top"
             effect="solid"
             borderColor="mediumseagreen"
             textColor="mediumseagreen"
-            delayHide={1000}
             clickable
             border
         >
-            <div>
-                <img src={Logo} height={150} width={250} />
-            </div>
-            <h1>
-                ci
-            </h1>
+            <h4 className="newfont" style={{ color: "white" }}>
+                CV
+            </h4>
         </ReactTooltip>
-    </div>
+
+        <ReactTooltip
+            id="github"
+            place="top"
+            effect="solid"
+            borderColor="mediumseagreen"
+            textColor="mediumseagreen"
+            clickable
+            border
+        >
+            <h4 className="newfont" style={{ color: "white" }}>
+                Github
+            </h4>
+        </ReactTooltip>
+
+        <ReactTooltip
+            id="language"
+            place="top"
+            effect="solid"
+            borderColor="mediumseagreen"
+            textColor="mediumseagreen"
+            clickable
+            border
+        >
+            <h4 className="newfont" style={{ color: "white" }}>
+                Cambiar Lenguaje (Descripcion)
+            </h4>
+        </ReactTooltip>
+
+        <ReactTooltip
+            id="projects"
+            place="top"
+            effect="solid"
+            borderColor="mediumseagreen"
+            textColor="mediumseagreen"
+            clickable
+            border
+        >
+            <h4 className="newfont" style={{ color: "white" }}>
+                Ver Proyectos en Fila
+            </h4>
+        </ReactTooltip>
+
+
+    </>
+
 }
 export default Tooltip;

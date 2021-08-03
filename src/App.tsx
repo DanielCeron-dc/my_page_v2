@@ -6,6 +6,7 @@ import Row from './Components/Layout/Row';
 import Spacer from './Components/Layout/Spacer';
 import MiLogo from './Components/MiLogo';
 import Modal from './Components/Modal/Modal';
+import Tooltip from './Components/Tooltip';
 import Information from './Containers/Information';
 import MyKnowledge from './Containers/MyKnowledgeScene';
 import ProjectsScene from './Containers/ProjectsScene';
@@ -16,9 +17,9 @@ function App() {
   const [showProjects, setShowProjects] = useState<boolean>(false);
   const isMobile = useCheckMobileScreen();
 
-
   return (
     <div className="App">
+      <Tooltip />
       <Modal />
       {isMobile ? <>
         <Information setShowProjects={setShowProjects} showProjects={showProjects} />
